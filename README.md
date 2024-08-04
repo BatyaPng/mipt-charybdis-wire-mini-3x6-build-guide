@@ -265,32 +265,28 @@ Rit DyeMore synthetic fiber dyes are an effective way to color the white nylon k
 **Process**
 
 1. Mix the dye and water according to the color formula and dye instructions. Adjust the ratios to match the volume of your container.
-2. Heat the solution up to ~60°C/140°F. Be careful not to go above 71°C/160°F or the nylon parts might start to deform.
-3. Put the parts into the solution, and put the mesh basket top down over the parts so the mesh base is at the top, preventing parts from floating.
-4. Submerge for five minutes (less if you'd like a lighter shade of the color)
+2. Heat the solution up to ~60°C/140°F. Be careful not to go above 70°C/160°F or the nylon parts might start to deform.
+3. Put the parts into the solution, and put the mesh basket on top of them. There is space underneath the basket for the keys to move freely.
+4. Submerge for five minutes, then pull one out and check the color. Most of the keys I dyed took 15-20 minutes to get to the color I wanted.
 5. While the parts are being dyed, fill a separate container with cold water.
 6. When the parts are ready, remove them from the hot solution and put them in the cold water.
 7. After the parts have cooled, dry them off
 
 **Notes**
 
-- I recommend making small batches of the dye solution and testing the color on a couple of keys to make sure you like it.
-- To keep the dye batches small, and to have an easy way to keep the keys in the solution, I used a small [tempura deep frying pot](https://www.amazon.com/dp/B01EHXPT2Y?psc=1&ref=ppx_yo2ov_dt_b_product_details). I took the handle off the mesh basket and turned it upside down so it would hold the parts in the solution.
-- I've dyed key caps in crimson red, gray (Crowned Prince), and blue (Flight Plan). I'll attach some picture soon.
+- I recommend making small batches of the dye solution and testing the color on a couple of keys to make sure you like it. I used four cups of water for each batch, so the dye measurements were very small.
+- To keep the dye batches small, and to have an easy way to keep the keys in the solution, I used a small [tempura deep frying pot](https://www.amazon.com/dp/B01EHXPT2Y?psc=1&ref=ppx_yo2ov_dt_b_product_details). The mesh basket has enough space under the bottom to fit several keys, but if you're doing large batches you can take the handle off and turn it upside down so it will hold parts in a bigger batch of the color solution.
+- You'll want to make sure the key caps are clean from dirt before dying them. Otherwise you'll get uneven color or dark/light spots.
 
 # ZMK Firmware
 
-The firmware can be downloaded from the [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) repo by opening the [Actions tab](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions), clicking on the latest successful run, then downloading the firmware file under Artifacts.
-
-The **main** branch builds firmware for the colemak dh key layout. The **layouts/qwerty** branch builds firmware for the qwerty layout. Make sure you pick the correct branch for your needs.
-
-![alt text](./images/branch_names.png)
+The firmware can be downloaded from my [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) repo by opening the [Actions Workflows](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions?query=is%3Acompleted+branch%3Amain), clicking on the latest successful run, then downloading the firmware file under Artifacts. There will be one for qwerty and one for colemak dh.
 
 Customizing the firmware is pretty straight forward. Common changes might include swapping the central and peripheral halves, changing the keyboard name, or modifying the key bindings. See the firmware repo for details on how to make changes.
 
 Note that the official ZMK firmware doesn't support the PMW3610 or mouse movement keys, both of which are used in the firmware above. To get a working firmware I leveraged the work of [inorichi](https://github.com/inorichi) to get the PMW3610 driver, and [petejohanson](https://github.com/petejohanson) for the driver to allow pointer movement and scrolling with keys.
 
-Official ZMK support for mouse keys [is being worked on](https://github.com/zmkfirmware/zmk/pull/778), and when it's merged I'll switch back to the official ZMK firmware for the builds.
+Official ZMK support for mouse keys [is being worked on](https://github.com/zmkfirmware/zmk/pull/2027), and when it's merged I'll switch back to the official ZMK firmware for the builds.
 
 ### Key Layouts
 
@@ -346,22 +342,14 @@ Combos are keys that can be pressed at the same time to execute an action. There
 
 To flash each side of the keyboard, follow the steps below:
 
-- Unzip th firmware.zip
+- Unzip the firmware.zip
 - Plug the right half info the computer through USB
 - Double press the reset button you soldered onto the nano holder PCB
 - The keyboard will mount as a removable storage device
-- Copy the charybdis_right-nice_nano_v2-zmk.uf2 file into the NICENANO storage device.
+- Copy the right side uf2 file into the NICENANO storage device.
 - It will take a few seconds, then it will unmount and restart itself.
-- Do the same with the left half, and copy the charybdis_left-nice_nano_v2-zmk.uf2 file.
+- Do the same with the left half, and copy the left side uf2 file.
 - Both halves of the keyboard should now be flashed with the firmware.
-
-# WIP
-
-That's it for now. A few more things to come later on
-
-- I'll have more updates to improve the key mapping like adjusting the hold tap [falvors](https://zmk.dev/docs/behaviors/hold-tap#flavors), testing out some more bindings for the extras layer, and adjusting some of the trackball and mouse key settings for smoother operation.
-- I'm looking into cutting the plates from aluminum plate. The aluminum and tools are cheap, and I want to see how it compares against SLM printing.
-- I still need to attach some photos of the dyed key caps
 
 # Credits
 This was my first keyboard build, and I couldn't have done it without the hard work from many others:
