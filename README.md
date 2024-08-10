@@ -280,76 +280,7 @@ Rit DyeMore synthetic fiber dyes are an effective way to color the white nylon k
 
 # ZMK Firmware
 
-The firmware can be downloaded from my [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) repo by opening the [Actions Workflows](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions?query=is%3Acompleted+branch%3Amain) and downloading the latest successful build. Follow the instructions on the repo readme for more details.
-
-Customizing the firmware is pretty straight forward. Common changes might include swapping the central and peripheral halves, changing the keyboard name, or modifying the key bindings. See the firmware repo for details on how to make changes.
-
-Note that the official ZMK firmware doesn't support the PMW3610 or mouse movement keys, both of which are used in the firmware above. To get a working firmware I leveraged the work of [inorichi](https://github.com/inorichi) to get the PMW3610 driver, and [petejohanson](https://github.com/petejohanson) for the driver to allow pointer movement and scrolling with keys.
-
-Official ZMK support for mouse keys [is being worked on](https://github.com/zmkfirmware/zmk/pull/2027), and when it's merged I'll switch back to the official ZMK firmware for the builds.
-
-### Key Layouts
-
-Currently there are eight layers in the firmware. I've included layout images of the six most useful layers below with a few details about each. However, all layers can be viewed/modified in the [charybdis.keymap](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/blob/main/config/charybdis.keymap) file.
-
-**0 - Base (Colemak DH)**
-
-![alt text](./images/0-base.png)
-
-Keys with two separate lines like the A key in the image above are tap/hold. The function on the top is sent when the key is tapped, the function on the bottom is sent when the key is held.
-
-L-1 through L-6 are layer keys and activate the layer when pressed. L-5 and L-6 stay in that layer until that same key is pressed again. Layer seven is activated by pressing ESC and Return at the same time.
-
-**1 - Num**
-
-![alt text](./images/1-num.png)
-
-All the number keys are tap/hold. If they are tapped, the number is sent, if they are held the corresponding F key is sent.
-
-**2 - Nav**
-
-![alt text](./images/2-nav.png)
-
-The navigation is heavily influenced by [VIM](https://www.lazyvim.org/). The arrow keys will work as indicated, but they are laid out in a more comfortable position than the traditional triangle. That being said there is a game layer that uses WASD for more traditional feel.
-
-The splits and pane changes are also specific to VIM sessions, but the home, end, and page up/down work like normal.
-
-**3 - Sym**
-
-![alt text](./images/3-sym.png)
-
-The symbols have been moved to positions that are comfortable for me to type when I am coding. You may find different positions better suited to your needs.
-
-**4 - Mouse**
-
-![alt text](./images/4-mouse.png)
-
-This layer lets you control the mouse and scroll wheel. It also includes common actions when using a mouse like copy/paste.
-
-**7 - Extras**
-
-![alt text](./images/7-extras.png)
-
-These are all the keys that don't need their own layer, and aren't accessed very frequently. The bluetooth connection keys are on this layer to make it easy to switch between computers. The USB/BT key is used to switch between the USB cable and the Bluetooth connection.
-
-**Combos**
-
-![alt text](./images/combos.png)
-
-Combos are keys that can be pressed at the same time to execute an action. There are only three combos at the moment, but there will be more coming as I refine the layout.
-
-### Flashing the Firmware
-
-To flash each side of the keyboard, follow the steps below:
-
-- Unzip the firmware.zip
-- Plug the right half info the computer through USB
-- Double press the reset button you soldered onto the nano holder PCB
-- The keyboard will mount as a removable storage device
-- Copy the right side uf2 file into the NICENANO storage device.
-- It will take a few seconds, then it will unmount and restart itself.
-- Do the same with the left half, and copy the left side uf2 file.
-- Both halves of the keyboard should now be flashed with the firmware.
+The firmware can be downloaded from my [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) repo by opening the [Actions Workflows](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions?query=is%3Acompleted+branch%3Amain) and downloading the latest successful build. Follow the instructions on the repo readme for more details, including how to flash the firmware.
 
 # Credits
 This was my first keyboard build, and I couldn't have done it without the hard work from many others:
