@@ -249,7 +249,9 @@ Install the anti-slip pads on to the bottom of each plate.
 
 Install the key caps, then connect each half to the computer the same way you did for the previous test. Confirm that each key still works.
 
-# Dye theKey Caps
+# Dye the Key Caps
+
+![colored_keys](images/dyed_keycaps.jpg)
 
 Rit DyeMore synthetic fiber dyes are an effective way to color the white nylon key caps to any color you'd like. You'll need a few things before you get started.
 
