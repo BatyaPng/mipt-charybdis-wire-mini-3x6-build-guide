@@ -211,7 +211,7 @@ Make sure to use the flush cut pliers to remove any protruding pins and solder f
 
 Instead of the traditional mounting point under the MCU, this build mounts the battery on the top lip of each case with some double sided tape so it is away from compnents that could be damaged with excessive heat or expansion.
 
-![alt text](images/battery.jpg)
+![alt text](images/battery_mount.jpg)
 
 **Testing**
 
