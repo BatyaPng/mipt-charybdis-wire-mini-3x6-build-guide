@@ -39,7 +39,7 @@ I ordered the PCBs from [JLCPCB](https://jlcpcb.com/).
 
 The gerber files have all been pulled from other repositories and are stored in the PCB Gerber Files directory. However, each source repository is linked in the part list above for reference.
 
-:information_source:&emsp;An alternative to victorlucachi's PMW3610 breakout design linked above is the [sensor board designed by Bastard Keyboards](https://docs.bastardkb.com/help/bluetooth.html#sensor). I have not used this design yet, but I plan to try it out in the future.
+:information_source:&emsp;An alternative to victorlucachi's PMW3610 breakout design linked above is the [sensor board designed by Bastard Keyboards](https://docs.bastardkb.com/help/bluetooth.html#sensor).
 
 ### 3D Case Prints
 
@@ -58,7 +58,7 @@ I ordered these parts from [JLC3DP](https://jlc3dp.com/3d-printing-quote) in SLS
 
 The files for these are in the 3D Print STL Files directory, and the source repos have been linked in the parts list above.
 
-After using the keyboard I reckon if I do this again I'll print the plates in SLM(metal) to add a bit of weight for a better typing feel, and to keep the keyboard flat against the desk. The nylon cases and plates can bend slightly, which makes typing on the corner keys push it off balance some of the time.
+Instead of printing static tents, I used some camera & phone equipment (see tenting section below). If you choose this method as well, you don't need to print the bottom plates.
 
 ### 3D Key Cap Prints
 
@@ -71,9 +71,7 @@ After using the keyboard I reckon if I do this again I'll print the plates in SL
 
 The key caps are DES profiled. These were designed by [pseudoku](https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles), and the key set files in this repo will print sets of 10 keys for row one, two, and three, and a single set of ergo thumb keys. Row two will have home dots for the keys that go under each index finger.
 
-JLC3DP SLS printed these in white 1172Pro Nylon. My intent with the white is to dye them later on.
-
-I was sent the same warning about parts being too thin and possible breaking/misprint during production, but again the risks were accepted, and they arrived without any issues. The combination of the texture of the SLS prints and the shape of the DES profile is very comfortable to type on.
+JLC3DP SLS printed these in white 1172Pro Nylon so they could be died later on.
 
 Note - JLC3DP charges per-part, and only allows combining a maximum of 10 small parts into a single print, which is why the sprues are included in the STL files. This means that each order is 10 keys for rows 1-3 and six keys for the thumbs.
 
@@ -119,11 +117,9 @@ I chose to solder the parts on myself so I ordered the parts above. A diagram of
 | [JST plug 2-pin](https://www.aliexpress.com/item/2251832721663484.html)                                                                                                | 2                                       |
 | [Adhesive bumper pads](https://www.amazon.com/Shintop-Furniture-Bumpers-Protection-Hemispherical/dp/B01DU0O00W)                                                        | 10                                      |
 
-The parts above were mostly ordered from Aliexpress and Amazon. If the links go to a listing that's no longer active, just search for something with the same description and specs.
+The standard for microcontrollers on the Charybdis wireless keyboard builds is the nice!nano v2.0. However, there are some cheaper alternatives documented on [this MCU wiki](https://github.com/joric/nrfmicro/wiki/Alternatives). This build uses the SuperMini NRF52840.
 
-The standard for microcontrollers on the Charybdis wireless keyboard builds is the nice!nano 2.0. However, there are some cheaper alternatives documented on [this MCU wiki](https://github.com/joric/nrfmicro/wiki/Alternatives). This build uses the SuperMini NRF52840.
-
-You can order whatever battery you like, it just needs to be 3.7v and more than 80mAh. If you want it to fit under the micro controller, make sure the dimensions are correct. You'll also need to use the optional header sockets. You can get away with using [diode legs](https://docs.splitkb.com/hc/en-us/articles/360011263059-How-do-I-socket-a-microcontroller#h_f7045b1e-5c02-4c73-8569-252b7fce7ad6) instead of socket pins, but they will not be as sturdy. Stick with the pins if you plan to disconnect the MCU often.
+The battery needs to be 3.7v and more than 80mAh. Make sure the dimesions match your chosen mounting location.
 
 The cable length requirements for the flex strip cables varies between components
 
@@ -133,7 +129,7 @@ The cable length requirements for the flex strip cables varies between component
 | Thumb Plates     	|   80mm 	|
 | PMW3610 Sensor   	|  100mm 	|
 
-The cables can be a bit longer or shorter, but sticking close to these lengths will make installation much easier. The parts list above uses 89mm for both the thumb plates and Nice!Nano holders, and 100mm for the sensor. You can order higher pin counts and cut the strips down or try to find exact pin count and length for each cable.
+The cables can be a bit longer or shorter, but sticking close to these lengths will make installation much easier. The parts list above uses 89mm for both the thumb plates and Nice!Nano holders, and 100mm for the sensor.
 
 ## Tool List
 
@@ -187,7 +183,7 @@ Solder on the power switches, and reset buttons to the left and right nano holde
 
 **MCU**
 
-Solder the MCUs to the nano holders using the standard pin headers or the socketed pin headers, depending on what you chose to order to mount the MCU.
+Solder the MCUs to the nano holders using the standard pin headers or the socketed pin headers, depending on what you chose to order to mount the MCU. If you use the socketed headers, make sure to put some kapton tape over the socket holes and poke the pins through to prevent solder from fusing the pin to the socket and MCU.
 
 The MCUs should be face down (components facing towards the nano holder PCB), and the top through holes on either side of the USB connector will not have a spot on the nice!nano PCB.
 
@@ -211,17 +207,11 @@ Then follow the [BastardKB docs](https://docs.bastardkb.com/bg_charybdis/09cable
 
 Make sure to use the flush cut pliers to remove any protruding pins and solder from the back side of the PCBs so that they can sit flat against the cases when the switches are being soldered in.
 
-For my build, I had some extra socketed pin headers laying around, so I chose to socket the sensor board to the nano holder with some 28 gauge wire I pulled out of an Ethernet cable. However, the 100mm ribbon cable from the BOM will probably look better, and be easier to install.
-
 **Battery**
 
-Most builds mount the battery under the MCU, however I opted to mount it on the top lip of each case with some double sided tape.
-
-The fit is perfect and I haven't had any issues with it in this location.
+Instead of the traditional mounting point under the MCU, this build mounts the battery on the top lip of each case with some double sided tape so it is away from compnents that could be damaged with excessive heat or expansion.
 
 ![alt text](images/battery.jpg)
-
-This allowed me to keep the battery away from components that could be damaged with excessive heat or expansion, and makes it easy to examine if I need to see the battery. The slack in the cable also makes it simple to change or remove the battery at any time.
 
 **Testing**
 
@@ -249,9 +239,34 @@ Install the anti-slip pads on to the bottom of each plate.
 
 Install the key caps, then connect each half to the computer the same way you did for the previous test. Confirm that each key still works.
 
+# Tenting
+
+A tenting solution that's stable, adjustable, and re-usable across multiple keyboards requires a few additional components:
+
+### Parts List
+
+| Part                                                              | Quantity |
+| ----------------------------------------------------------------- | -------- |
+| [Quick Release Plate](https://www.amazon.com/dp/B08NGC3M9M)       | 2        |
+| [55mm Magnetic Phone Mount](https://www.amazon.com/dp/B0D21RP69C) | 2        |
+| Ferromagnetic Right Plate                                         | 1        |
+| Ferromagnetic Left Plate                                          | 1        |
+
+To 3D print the bottom plates use the STL files in `/Magnet Plates/3D STL/`.
+
+To have the plates laser/water jet cut, use the dxf files in `/Magnet Plates/2D DXF/`. You'll need to have the screw holes chamfered as well. Depending on what type of steel is used, you may want to have them powder coated to prevent rusting.
+
+To make changes to any of the files (e.g. to accomodate different size magnets), the SVG files has been included in the same directory.  
+
+![alt text](images/ferromagnetic_plates.png)
+
+![alt text](images/mountsandmagnets.jpg)
+
+![alt text](images/tents.jpg)
+
 # Dye the Key Caps
 
-![colored_keys](images/dyed_keycaps.jpg)
+![alt text](images/colored_keys.jpg)
 
 Rit DyeMore synthetic fiber dyes are an effective way to color the white nylon key caps to any color you'd like. You'll need a few things before you get started.
 
