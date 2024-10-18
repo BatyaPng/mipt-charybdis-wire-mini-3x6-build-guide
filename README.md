@@ -1,6 +1,8 @@
 # Wireless Charybdis Mini (3x6) Build Guide
 
-![pmw3610_pcb](./images/white_keys.png "Component Placement")
+<img src="images/white_keys.png" width="1500">
+
+<img src="images/petg.jpg" width="1500">
 
 # Intro
 
@@ -20,7 +22,7 @@ This guide serves as a resource to assist you in building your Charybdis. I assu
 
 ## Bill of Materials
 
-These are all the components that need to be ordered to build the keyboard. The quantity column denotes how many of each component are required for the build. Adjust the order quantity as needed.
+These are all the components that need to be ordered to build the keyboard. The quantity column denotes how many of each component are required for the build. Adjust your order quantity as needed.
 
 ### PCBs
 
@@ -39,7 +41,7 @@ I ordered the PCBs from [JLCPCB](https://jlcpcb.com/).
 
 The gerber files have all been pulled from other repositories and are stored in the PCB Gerber Files directory. However, each source repository is linked in the part list above for reference.
 
-:information_source:&emsp;An alternative to victorlucachi's PMW3610 breakout design linked above is the [sensor board designed by Bastard Keyboards](https://docs.bastardkb.com/help/bluetooth.html#sensor).
+:information_source:&emsp;An alternative to victorlucachi's PMW3610 breakout design linked above is the [sensor board designed by Bastard Keyboards](https://github.com/Bastardkb/charybdis-pmw3610-breakout).
 
 ### 3D Case Prints
 
@@ -54,11 +56,12 @@ The gerber files have all been pulled from other repositories and are stored in 
 | [Adapter BTU Bottom](https://github.com/Bastardkb/Charybdis/blob/d0e20cc/files/mods/btu/adapter_btu_bottom_v32.stl)                   | 1            |
 | [Ball Transfer Unit (BTU)](https://github.com/Bastardkb/Charybdis/blob/322faad/files/mods/printable-btu/printable_btu_2.5mm_ball.stl) | 3            |
 
-I ordered these parts from [JLC3DP](https://jlc3dp.com/3d-printing-quote) in SLS black 3201PA-F Nylon. After the order was reviewed I was warned that some of the parts were too thin and may bend or break during production. The risks were accepted and the parts arrived without issue.
 
 The files for these are in the 3D Print STL Files directory, and the source repos have been linked in the parts list above.
 
-Instead of printing static tents, I used some camera & phone equipment (see tenting section below). If you choose this method as well, you don't need to print the bottom plates.
+I printed these parts at home in PETG and they turned out great. I also had a set printed by JLC3DP in Nylon. That order came with a warning that some of the parts may be too thin, but I accepted the risk and they arrived just fine.
+
+Instead of printing static tents, I used some camera & phone equipment (see tenting section below). If you choose this method as well, you don't need to print the bottom plates since they'll need to be cut out of metal separately.
 
 ### 3D Key Cap Prints
 
@@ -69,9 +72,9 @@ Instead of printing static tents, I used some camera & phone equipment (see tent
 | r3       | 2            |
 | thumb    | 1            |
 
-The key caps are DES profiled. These were designed by [pseudoku](https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles), and the key set files in this repo will print sets of 10 keys for row one, two, and three, and a single set of ergo thumb keys. Row two will have home dots for the keys that go under each index finger.
+For one of the builds I used custom printed DES profiled key caps. These were designed by [pseudoku](https://github.com/pseudoku/PseudoMakeMeKeyCapProfiles) The key set files in this repo will print sets of 10 keys for row one, two, and three, and a single set of ergo thumb keys. Row two will have home dots for the keys that go under each index finger.
 
-JLC3DP SLS printed these in white 1172Pro Nylon so they could be died later on.
+JLC3DP SLS printed these in white Nylon. I dyed some of them, and I used the spares to create molds so I could create more in custom resin colors.
 
 Note - JLC3DP charges per-part, and only allows combining a maximum of 10 small parts into a single print, which is why the sprues are included in the STL files. This means that each order is 10 keys for rows 1-3 and six keys for the thumbs.
 
@@ -117,9 +120,11 @@ I chose to solder the parts on myself so I ordered the parts above. A diagram of
 | [JST plug 2-pin](https://www.aliexpress.com/item/2251832721663484.html)                                                                                                | 2                                       |
 | [Adhesive bumper pads](https://www.amazon.com/Shintop-Furniture-Bumpers-Protection-Hemispherical/dp/B01DU0O00W)                                                        | 10                                      |
 
+If you'd prefer a quieter set of key switches, there are lots of alternaves. I used the [Akko V3 Penguin Tactile Silent Keyboard Switches](https://www.amazon.com/Akko-Keyboard-Mechanical-Switches-Structure/dp/B0CJY7QN11/ref=sr_1_1) for my work keyboard and they are great.
+
 The standard for microcontrollers on the Charybdis wireless keyboard builds is the nice!nano v2.0. However, there are some cheaper alternatives documented on [this MCU wiki](https://github.com/joric/nrfmicro/wiki/Alternatives). This build uses the SuperMini NRF52840.
 
-The battery needs to be 3.7v and more than 80mAh. Make sure the dimesions match your chosen mounting location.
+The battery needs to be 3.7v and more than 80mAh. You can use the [ZMK Power Profiler](https://zmk.dev/power-profiler) to estimate the mAh you need for your application. Make sure the dimesions match your chosen mounting location.
 
 The cable length requirements for the flex strip cables varies between components
 
@@ -169,7 +174,7 @@ If you've chosen to solder the components on the PMW3610 breakout PCB, follow th
 
 A stand with a magnifying glass, or a digital microscope are very helpful when trying to ensure the soldering is done correctly on these small components.
 
-![pmw3610_pcb](./images/PMW3610_component_diagram.png "Component Placement")
+<img src="images/PMW3610_component_diagram.png" width="600">
 
 **PMW3610**
 
@@ -191,7 +196,8 @@ The MCUs should be face down (components facing towards the nano holder PCB), an
 
 After the components have all been soldered, it should look something like the picture below.
 
-![alt text](images/nano_holder.jpg)
+<img src="images/nano_holder.jpg" width="600">
+
 
 Being careful to not short any connections, connect the JST battery connections, turn the switch to the on position, and confirm the MCU powers on.
 
@@ -211,7 +217,7 @@ Make sure to use the flush cut pliers to remove any protruding pins and solder f
 
 Instead of the traditional mounting point under the MCU, this build mounts the battery on the top lip of each case with some double sided tape so it is away from compnents that could be damaged with excessive heat or expansion.
 
-![alt text](images/battery_mount.jpg)
+<img src="images/battery_mount.jpg" width="600">
 
 **Testing**
 
@@ -227,7 +233,7 @@ Put the sensor cover into the right case, install the BTUs into the Adapter BTU 
 
 Make sure to push the BTUs all the way into the Adapter BTU Bottom. It should something like this.
 
-![alt text](images/btu_bottom.jpg)
+<img src="images/btu_bottom.jpg" width="600">
 
 Finally, install the sensor PCB and sensor cover by screwing them into the BTU bottom adapter.
 
@@ -258,42 +264,15 @@ To have the plates laser/water jet cut, use the dxf files in `/Magnet Plates/2D 
 
 To make changes to any of the files (e.g. to accomodate different size magnets), the SVG files has been included in the same directory.  
 
-![alt text](images/ferromagnetic_plates.png)
+<img src="images/ferromagnetic_plates.png" width="1500">
 
-![alt text](images/mountsandmagnets.jpg)
+<img src="images/mountsandmagnets.jpg" width="1500">
 
-![alt text](images/tents.jpg)
+<img src="images/underside.jpg" width="1500">
 
-# Dye the Key Caps
+<img src="images/tents.jpg" width="1500">
 
-![alt text](images/colored_keys.jpg)
 
-Rit DyeMore synthetic fiber dyes are an effective way to color the white nylon key caps to any color you'd like. You'll need a few things before you get started.
-
-**Tools & Supplies**
-- Rit DyeMore dye(s)
-  - Use their [color formula picker](https://www.ritdye.com/color-formulas/) to figure out which dye to order
-- A container to hold the water and dye while it's at temperature
-- Something to hold the parts in the dye (the nylon keys will float without this)
-- Tongs to get the parts out of the hot dye solution
-- Stove or cooktop
-- Thermometer
-
-**Process**
-
-1. Mix the dye and water according to the color formula and dye instructions. Adjust the ratios to match the volume of your container.
-2. Heat the solution up to 60°C/140°F. Be careful not to go above 70°C/160°F or the nylon parts might start to deform.
-3. Put the parts into the solution, and make sure they stay submerged.
-4. Wait for five minutes, then pull one out and check the color. If it's not dark enough, keep the parts in another five minutes. Most of the keys I dyed took 15-20 minutes to get to the color I wanted.
-5. While the parts are being dyed, fill a separate container with cold water.
-6. When the parts are ready, remove them from the hot solution and put them in the cold water.
-7. After the parts have cooled, dry them off
-
-**Notes**
-
-- I recommend making small batches of the dye solution and testing the color on a couple of keys to make sure you like it. I used four cups of water for each batch, so the dye measurements were very small.
-- To keep the dye batches small, and to have an easy way to keep the keys in the solution, I used a small [tempura deep frying pot](https://www.amazon.com/dp/B01EHXPT2Y?psc=1&ref=ppx_yo2ov_dt_b_product_details). The mesh basket has enough space under the bottom to fit several keys, but if you're doing large batches you can take the handle off and turn it upside down so it will hold parts in a bigger batch of the color solution.
-- You'll want to make sure the key caps are clean from dirt before dying them. Otherwise you'll get uneven color or dark/light spots.
 
 # ZMK Firmware
 
