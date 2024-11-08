@@ -1,14 +1,16 @@
 # Wireless Charybdis Mini (3x6) Build Guide
 
+### HOME BUILD
 <img src="images/white_keys.png" width="1500">
 
+### WORK BUILD
 <img src="images/petg.jpg" width="1500">
 
 # Intro
 
 This repository is a comprehensive build guide for the Charybdis keyboard, which is an open source, ergonomic keyboard created by [Bastard Keyboards](https://github.com/Bastardkb/Charybdis) and graciously shared with the community.
 
-This guide is a log of all the steps I took in my build process, and for the most part is just a long winded version of Eren Atas' [supremely helpful build guide](https://github.com/erenatas/charybdis-wireless-3x6/blob/master/README.md).
+This guide is a log of all the steps I took in my build process, and for the most part is just a long winded version of Eren Atas' [supremely helpful build guide](https://github.com/erenatas/charybdis-wireless-3x6/blob/master/README.md). However it additionally includes instructions and links to firmware for both wireless bluetooth and wireless dongle configurations.
 
 **Join the Community**
 
@@ -37,11 +39,13 @@ These are all the components that need to be ordered to build the keyboard. The 
 
 I ordered the PCBs from [JLCPCB](https://jlcpcb.com/).
 
-:warning:&emsp;**A thickness of 0.8 or less** must be set for the left thumb, right thumb, and plate PCBs.
+> [!WARNING]
+> **A thickness of 0.8 or less** must be set for the left thumb, right thumb, and plate PCBs.
 
 The gerber files have all been pulled from other repositories and are stored in the PCB Gerber Files directory. However, each source repository is linked in the part list above for reference.
 
-:information_source:&emsp;An alternative to victorlucachi's PMW3610 breakout design linked above is the [sensor board designed by Bastard Keyboards](https://github.com/Bastardkb/charybdis-pmw3610-breakout).
+> [!NOTE]
+> An alternative to victorlucachi's PMW3610 breakout design linked above is the [sensor board designed by Bastard Keyboards](https://github.com/Bastardkb/charybdis-pmw3610-breakout).
 
 ### 3D Case Prints
 
@@ -76,7 +80,8 @@ For one of the builds I used custom printed DES profiled key caps. These were de
 
 JLC3DP SLS printed these in white Nylon. I dyed some of them, and I used the spares to create molds so I could create more in custom resin colors.
 
-Note - JLC3DP charges per-part, and only allows combining a maximum of 10 small parts into a single print, which is why the sprues are included in the STL files. This means that each order is 10 keys for rows 1-3 and six keys for the thumbs.
+> [!NOTE]  
+> JLC3DP charges per-part, and only allows combining a maximum of 10 small parts into a single print, which is why the sprues are included in the STL files. This means that each order is 10 keys for rows 1-3 and six keys for the thumbs.
 
 If you have different printing requirements/capabilities, the OpenSCAD code in [this fork](https://github.com/280Zo/PseudoMakeMeKeyCapProfiles) can be changed by updating the keeb.scad file to render whatever keys you like, with or without sprues, and with or without home dots. If more than one set of rows is rendered at a time, and sprues are enabled, the sprues will be meshed in a grid.
 
@@ -95,7 +100,8 @@ These are all the components required for the sensor breakout PCB. It's possible
 
 I chose to solder the parts on myself so I ordered the parts above. A diagram of where to solder each component on is in the assembly instructions.
 
-:information_source:&emsp;Note that part number [C79924](https://jlcpcb.com/partdetail/TexasInstruments-TLV70018DDCR/C79924)/TLV70018DDCR is a substitute for [C146366](https://jlcpcb.com/jp/partdetail/TOSHIBA-TCR2EF19_LMCT/C146366)/TCR2EF19,LM(CT) which is what the designer of the PCB originally used. Either component will work, but if you plan to have JLCPCB assemble the sensor board the C146366 is what's included in the parts list and it is often out of stock. However, the replacement is normally available which is why it's used above.
+> [!NOTE]
+> Part number [C79924](https://jlcpcb.com/partdetail/TexasInstruments-TLV70018DDCR/C79924)/TLV70018DDCR is a substitute for [C146366](https://jlcpcb.com/jp/partdetail/TOSHIBA-TCR2EF19_LMCT/C146366)/TCR2EF19,LM(CT) which is what the designer of the PCB originally used. Either component will work, but if you plan to have JLCPCB assemble the sensor board the C146366 is what's included in the parts list and it is often out of stock. The replacement is normally available which is why it's used above.
 
 ### General Components
 
@@ -120,9 +126,12 @@ I chose to solder the parts on myself so I ordered the parts above. A diagram of
 | [JST plug 2-pin](https://www.aliexpress.com/item/2251832721663484.html)                                                                                                | 2                                       |
 | [Adhesive bumper pads](https://www.amazon.com/Shintop-Furniture-Bumpers-Protection-Hemispherical/dp/B01DU0O00W)                                                        | 10                                      |
 
-If you'd prefer a quieter set of key switches, there are lots of alternaves. I used the [Akko V3 Penguin Tactile Silent Keyboard Switches](https://www.amazon.com/Akko-Keyboard-Mechanical-Switches-Structure/dp/B0CJY7QN11/ref=sr_1_1) for my work keyboard and they are great.
+> [!NOTE]  
+> To build the keyboard in the dongle configuration doesn't require any additional build steps, but it does require the purchace of an additional MCU and use of the correct firmware (see the Firmware section below).
 
 The standard for microcontrollers on the Charybdis wireless keyboard builds is the nice!nano v2.0. However, there are some cheaper alternatives documented on [this MCU wiki](https://github.com/joric/nrfmicro/wiki/Alternatives). This build uses the SuperMini NRF52840.
+
+If you'd prefer a quieter set of key switches, there are lots of alternaves. I used the [Akko V3 Penguin Tactile Silent Keyboard Switches](https://www.amazon.com/Akko-Keyboard-Mechanical-Switches-Structure/dp/B0CJY7QN11/ref=sr_1_1) for my work keyboard and they are decent enough.
 
 The battery needs to be 3.7v and more than 80mAh. You can use the [ZMK Power Profiler](https://zmk.dev/power-profiler) to estimate the mAh you need for your application. Make sure the dimesions match your chosen mounting location.
 
@@ -192,7 +201,8 @@ Solder the MCUs to the nano holders using the standard pin headers or the socket
 
 The MCUs should be face down (components facing towards the nano holder PCB), and the top through holes on either side of the USB connector will not have a spot on the nice!nano PCB.
 
-:warning:&emsp;As mentioned above, do not set your soldering iron any higher than 300°C.
+> [!WARNING]
+> As mentioned above, do not set your soldering iron any higher than 300°C.
 
 After the components have all been soldered, it should look something like the picture below.
 
@@ -231,7 +241,7 @@ Once all the switch pads have been confirmed to work, solder in the switches by 
 
 Put the sensor cover into the right case, install the BTUs into the Adapter BTU Bottom, then screw the Adapter BTU Bottom into the sensor cover.
 
-Make sure to push the BTUs all the way into the Adapter BTU Bottom. It should something like this.
+Make sure to push the BTUs all the way into the Adapter BTU Bottom. It should look something like this.
 
 <img src="images/btu_bottom.jpg" width="600">
 
@@ -262,7 +272,7 @@ To 3D print the bottom plates use the STL files in `/Magnet Plates/3D STL/`.
 
 To have the plates laser/water jet cut, use the dxf files in `/Magnet Plates/2D DXF/`. You'll need to have the screw holes chamfered as well. Depending on what type of steel is used, you may want to have them powder coated to prevent rusting.
 
-To make changes to any of the files (e.g. to accomodate different size magnets), the SVG files has been included in the same directory.  
+To make changes to any of the files (e.g. to accommodate different size magnets), the SVG files have been included in the same directory.  
 
 <img src="images/ferromagnetic_plates.png" width="1500">
 
@@ -276,7 +286,7 @@ To make changes to any of the files (e.g. to accomodate different size magnets),
 
 # ZMK Firmware
 
-The firmware can be downloaded from my [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) repo by opening the [Actions Workflows](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions?query=is%3Acompleted+branch%3Amain) and downloading the latest successful build. Follow the instructions on the repo readme for more details, including how to flash the firmware.
+The firmware can be downloaded from the [charybdis-wireless-mini-zmk-firmware](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware) repo by opening the [Actions Workflows](https://github.com/280Zo/charybdis-wireless-mini-zmk-firmware/actions?query=is%3Acompleted+branch%3Amain) and downloading the latest successful build. Follow the instructions on the repo readme for more details, including how to flash the firmware, how to make changes to the key layouts, and how to customize and build your own firmware.
 
 # Credits
 This was my first keyboard build, and I couldn't have done it without the hard work from many others:
