@@ -108,13 +108,13 @@ I chose to solder the parts on myself so I ordered the parts above. A diagram of
 | **Part**                                                                                                                                                               | **Quantity**                            |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------- |
 | [Trackball](https://www.amazon.com/Perixx-18021-PERIPRO-303GR-Trackball-Compatible/dp/B071NX7Y2J)                                                                      | 1                                       |
-| [SuperMini NRF52840 Microcontrollers](https://www.aliexpress.us/item/3256805848952479.html?gatewayAdapt=glo2usa)                                                       | 2                                       |
+| [SuperMini NRF52840 Microcontrollers](https://www.aliexpress.us/                                  |
 | [Mill Max Low Profile Sockets 315-43-112-41-003000 (optional)](https://www.mouser.com/ProductDetail/Mill-Max/315-43-112-41-003000?qs=s8Nb1z4Wn%2FRfWrVqQ0TOuQ%3D%3D)   | 4                                       |
 | [Mill Max Pins 3320-0-00-15-00-00-03-0 (optional)](https://www.mouser.com/ProductDetail/Mill-Max/3320-0-00-15-00-00-03-0?qs=s8Nb1z4Wn%2FQ16WBIwCPrTw%3D%3D)            | 48                                      |
 | [1N4148W Signal Diodes](https://www.amazon.com/gp/product/B079KJX5J9/ref=ox_sc_act_title_1?smid=A14FP9XIRL6C1F&psc=1)                                                  | 41                                      |
 | [Button (4x4x1.5)](https://www.aliexpress.us/item/2255800859820067.html?gatewayAdapt=glo2usa4itemAdapt)                                                                | 2                                       |
 | [Mini Toggle Switch SPDT 3mm](https://www.amazon.com/Position-Breadboard-Electronic-Miniature-SlideSwitch/dp/B09R42XQTB)                                               | 2                                       |
-| [3.7V 130mAh 401030 Li-Po Batteries](https://www.aliexpress.us/item/3256805609268740.html?)                                                                            | 2                                       |
+                                |
 | [2.5mm Silicon Nitride Ceramic Ball Bearings](https://www.aliexpress.us/item/2255799954006155.html)                                                                    | 3                                       |
 | [80MM Flexible Flat Cables (Flexstrip Jumper)](https://www.aliexpress.us/item/3256803312420217.html)                                                                   | 2 - 6 pin <br> 2 - 5 pin <br> 2 - 4 pin |
 | [100MM Flexible Flat Cables (Flexstrip Jumper)](https://www.mouser.com/ProductDetail/TE-Connectivity/FSN-24A-15?qs=sGAEpiMZZMv0DJfhVcWlK2hMVXoZwMunw%2Fzfkr%2F5Lgc%3D) | 2                                       |
@@ -123,7 +123,7 @@ I chose to solder the parts on myself so I ordered the parts above. A diagram of
 | [M4 x D6 x L5 Brass Melt Nuts](https://www.aliexpress.us/item/2255800046610840.html)                                                                                   | 12                                      |
 | [M3 8mm Torx Screws](https://www.aliexpress.us/item/2251832820627860.html)                                                                                             | 5                                       |
 | [M4 8mm Torx Screws](https://www.aliexpress.com/item/2251832820627860.html)                                                                                            | 12                                      |
-| [JST plug 2-pin](https://www.aliexpress.com/item/2251832721663484.html)                                                                                                | 2                                       |
+                                 |
 | [Adhesive bumper pads](https://www.amazon.com/Shintop-Furniture-Bumpers-Protection-Hemispherical/dp/B01DU0O00W)                                                        | 10                                      |
 
 > [!NOTE]  
@@ -191,22 +191,8 @@ The lens of the sensor should be removed or covered with Kapton tape while solde
 
 When working with the sensor and the MCU it's best to keep soldering iron temperatures below 300°C.
 
-**Nice!Nano Holder Components**
-
-Solder on the power switches, and reset buttons to the left and right nano holder PCBs. Then solder on the JST female connectors. I positioned this so the red wire on the male side would be the battery's positive connection. I also had to bend the legs out a little bit in order to get each one to fit flush with the nano holder board.
-
-**MCU**
-
-Solder the MCUs to the nano holders using the standard pin headers or the socketed pin headers, depending on what you chose to order to mount the MCU. If you use the socketed headers, make sure to put some kapton tape over the socket holes and poke the pins through to prevent solder from fusing the pin to the socket and MCU.
-
-The MCUs should be face down (components facing towards the nano holder PCB), and the top through holes on either side of the USB connector will not have a spot on the nice!nano PCB.
-
 > [!WARNING]
 > As mentioned above, do not set your soldering iron any higher than 300°C.
-
-After the components have all been soldered, it should look something like the picture below.
-
-<img src="images/nano_holder.jpg" width="600">
 
 
 Being careful to not short any connections, connect the JST battery connections, turn the switch to the on position, and confirm the MCU powers on.
@@ -222,12 +208,6 @@ Use [BastardKB's documentation](https://docs.bastardkb.com/bg_charybdis/07ribbon
 Then follow the [BastardKB docs](https://docs.bastardkb.com/bg_charybdis/09cables_to_splinky.html) on how to connect all of the PCBs together.
 
 Make sure to use the flush cut pliers to remove any protruding pins and solder from the back side of the PCBs so that they can sit flat against the cases when the switches are being soldered in.
-
-**Battery**
-
-Instead of the traditional mounting point under the MCU, this build mounts the battery on the top lip of each case with some double sided tape so it is away from compnents that could be damaged with excessive heat or expansion.
-
-<img src="images/battery_mount.jpg" width="600">
 
 **Testing**
 
